@@ -1,0 +1,30 @@
+# env files
+.env
+.env.*
+!.env.example
+
+# node
+node_modules/
+.next/
+dist/
+build/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# uploads (your CSV files)
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db
