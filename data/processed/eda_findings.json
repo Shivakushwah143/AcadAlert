@@ -1,0 +1,36 @@
+{
+  "data_quality": {
+    "total_records": 500,
+    "missing_values": {
+      "student_id": 0,
+      "student_name": 0,
+      "attendance_percentage": 0,
+      "internal_marks": 0,
+      "assignment_submission_rate": 0,
+      "semester": 0,
+      "risk_score": 0,
+      "risk_level": 0
+    },
+    "class_distribution": {
+      "Low": 400,
+      "Moderate": 92,
+      "High": 8
+    }
+  },
+  "key_correlations": {
+    "attendance_vs_risk": -0.5363205068567308,
+    "marks_vs_risk": -0.532721115061899,
+    "assignment_vs_risk": -0.3619006119091271
+  },
+  "high_risk_indicators": [
+    "Attendance below 60% is a strong indicator of high risk",
+    "Internal marks below 50 strongly correlates with high risk",
+    "Assignment submission rate below 50% indicates disengagement",
+    "All three features show negative correlation with risk score"
+  ],
+  "feature_engineering_suggestions": [
+    "Create binary flags: low_attendance (<60%), low_marks (<50%), low_assignment (<50%)",
+    "Create interaction features: attendance * assignment_rate",
+    "Consider binning semester into early (1-2), mid (3-5), late (6-8)"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "feature_descriptions": {
+    "attendance_percentage": "Student attendance rate (0-100%). Primary predictor. Low attendance <60% indicates high risk.",
+    "internal_marks": "Average internal assessment marks (0-100). Computed from attendance + assignment. 40% weight in risk.",
+    "assignment_submission_rate": "Assignment submission percentage (0-100). Early engagement indicator. 20% weight in risk.",
+    "semester": "Academic semester (1-8). For session-based analysis."
+  },
+  "risk_formula": "risk_score = (100-attendance)*0.4 + (100-internal_marks)*0.4 + (100-assignment)*0.2 + noise",
+  "thresholds": {
+    "High Risk": "risk_score >= 55",
+    "Moderate Risk": "35 <= risk_score < 55",
+    "Low Risk": "risk_score < 35"
+  },
+  "key_patterns": [
+    "Attendance correlates with marks (engaged students perform better)",
+    "Assignment rate is an early warning signal",
+    "Risk scores have realistic noise to simulate real-world uncertainty"
+  ]
+}

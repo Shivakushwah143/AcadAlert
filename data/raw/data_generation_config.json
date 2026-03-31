@@ -1,0 +1,46 @@
+{
+  "n_students": 500,
+  "random_seed": 42,
+  "features": {
+    "attendance_percentage": {
+      "distribution": "normal",
+      "mean": 75,
+      "std": 20,
+      "clip_min": 0,
+      "clip_max": 100
+    },
+    "assignment_submission_rate": {
+      "distribution": "normal",
+      "mean": 70,
+      "std": 25,
+      "clip_min": 0,
+      "clip_max": 100
+    },
+    "internal_marks": {
+      "distribution": "computed",
+      "base": 50,
+      "attendance_weight": 0.3,
+      "assignment_weight": 0.2,
+      "noise_std": 15,
+      "clip_min": 0,
+      "clip_max": 100
+    },
+    "semester": {
+      "distribution": "uniform_int",
+      "min": 1,
+      "max": 8
+    }
+  },
+  "risk_scoring": {
+    "weights": {
+      "attendance": 0.4,
+      "internal_marks": 0.4,
+      "assignment_rate": 0.2
+    },
+    "noise_std": 10,
+    "thresholds": {
+      "high_risk": 55,
+      "moderate_risk": 35
+    }
+  }
+}
