@@ -55,4 +55,10 @@ class DashboardStats(BaseModel):
     recent_predictions: List[PredictionResponse]
 
 
-    
+class StudentResponse(StudentBase):
+    id: str = Field(..., alias="_id")
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        populate_by_name = True  # Changed from allow_population_by_field_name
